@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lumber Calculator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="./script.js"></script>
+</head>
+<body>
+
+	<table id="tblOptions">
+		<tr>
+			<td align="right">Size needed:</td>
+			<td> <input type="textBox"  id="txtSize"  data-optionNum="4" value="22000" onkeyup="calculate()" /></td>
+			<td align="right">Difference:</td>
+			<td> <input type="textBox"  id="txtDiff"  data-optionNum="4" readonly /></td>
+			<td align="right">Total:</td>
+			<td> <input type="textBox"  id="txtTotal" data-optionNum="4" readonly /></td>
+		</tr>
+		<tr>
+			<th>Lock</th>
+			<th>Size</th>
+			<th>Count</th>
+			<th>Max</th>
+			<th>Min</th>
+			<th>Total</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="ckbLock"        data-optionNum="1"                                    /></td>
+			<td><input type="textBox"  class="txtSize "       data-optionNum="1" value="1100" onkeyup="setTotal(1)" /></td>
+			<td><input type="textBox"  class="txtCount"       data-optionNum="1" value="1"    onkeyup="setTotal(1)" /></td>
+			<td><input type="textBox"  class="txtMax"         data-optionNum="1" value="-1"   onkeyup="setTotal(1)" /></td>
+			<td><input type="textBox"  class="txtMin"         data-optionNum="1" value="0"    onkeyup="setTotal(1)" /></td>
+			<td><input type="textBox"  class="txtTotal"       data-optionNum="1" readonly                           /></td>
+			<td><span onclick="removeOption(1)">X</span></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="ckbLock"        data-optionNum="2"                                    /></td>
+			<td><input type="textBox"  class="txtSize "       data-optionNum="2" value="1300" onkeyup="setTotal(2)" /></td>
+			<td><input type="textBox"  class="txtCount"       data-optionNum="2" value="1"    onkeyup="setTotal(2)" /></td>
+			<td><input type="textBox"  class="txtMax"         data-optionNum="2" value="-1"   onkeyup="setTotal(2)" /></td>
+			<td><input type="textBox"  class="txtMin"         data-optionNum="2" value="0"    onkeyup="setTotal(2)" /></td>
+			<td><input type="textBox"  class="txtTotal"       data-optionNum="2" readonly                           /></td>
+			<td><span onclick="removeOption(2)">X</span></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="ckbLock"        data-optionNum="3"                                    /></td>
+			<td><input type="textBox"  class="txtSize "       data-optionNum="3" value="1500" onkeyup="setTotal(3)" /></td>
+			<td><input type="textBox"  class="txtCount"       data-optionNum="3" value="1"    onkeyup="setTotal(3)" /></td>
+			<td><input type="textBox"  class="txtMax"         data-optionNum="3" value="-1"   onkeyup="setTotal(3)" /></td>
+			<td><input type="textBox"  class="txtMin"         data-optionNum="3" value="0"    onkeyup="setTotal(3)" /></td>
+			<td><input type="textBox"  class="txtTotal"       data-optionNum="3" readonly                           /></td>
+			<td><span onclick="removeOption(3)">X</span></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" class="ckbLock"        data-optionNum="4"                                    /></td>
+			<td><input type="textBox"  class="txtSize "       data-optionNum="4" value="1700" onkeyup="setTotal(4)" /></td>
+			<td><input type="textBox"  class="txtCount"       data-optionNum="4" value="1"    onkeyup="setTotal(4)" /></td>
+			<td><input type="textBox"  class="txtMax"         data-optionNum="4" value="-1"   onkeyup="setTotal(4)" /></td>
+			<td><input type="textBox"  class="txtMin"         data-optionNum="4" value="0"    onkeyup="setTotal(4)" /></td>
+			<td><input type="textBox"  class="txtTotal"       data-optionNum="4" readonly                           /></td>
+			<td><span onclick="removeOption(4)">X</span></td>
+		</tr>
+	</table>
+
+<button onclick="calculate()">calculate</button>
+<button onclick="addOption()">add option</button>
+
+	<script type="text/javascript">
+		calculate()
+	</script>
+</body>
+</html>
